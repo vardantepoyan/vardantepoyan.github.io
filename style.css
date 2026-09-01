@@ -1,4 +1,10 @@
 /* =========================================
+   CREAM + TEAL
+   Vardan Tepoyan Personal Website
+========================================= */
+
+
+/* =========================================
    GLOBAL
 ========================================= */
 
@@ -11,15 +17,26 @@ html {
 }
 
 :root {
-    --background: #f7f6f2;
-    --surface: #ffffff;
-    --text: #20242a;
-    --muted: #68707a;
-    --light-muted: #969ca3;
-    --line: #deded9;
-    --accent: #263f5b;
-    --accent-light: #e8edf2;
+    --background: #F3F6F3;
+    --surface: #FAFCFA;
+
+    --text: #202827;
+    --text-soft: #4F5A58;
+    --muted: #788380;
+    --light-muted: #9AA5A2;
+
+    --accent: #236A68;
+    --accent-dark: #185351;
+    --accent-soft: #DCEAE7;
+
+    --line: #D3DEDB;
+    --line-dark: #BECBC7;
 }
+
+
+/* =========================================
+   BODY
+========================================= */
 
 body {
     margin: 0;
@@ -32,9 +49,11 @@ body {
         sans-serif;
 
     background: var(--background);
+
     color: var(--text);
 
     font-size: 16px;
+
     line-height: 1.7;
 
     -webkit-font-smoothing: antialiased;
@@ -50,7 +69,9 @@ body {
 
     display: grid;
 
-    grid-template-columns: minmax(0, 1fr) 220px;
+    grid-template-columns:
+        minmax(0, 1fr)
+        220px;
 }
 
 
@@ -60,22 +81,29 @@ body {
 
 .content {
     width: 100%;
+
     max-width: 920px;
 
-    padding: 100px 80px 120px;
+    padding:
+        100px
+        80px
+        120px;
 
     justify-self: center;
 }
 
 
 /* =========================================
-   SECTIONS
+   PAGE SECTIONS
 ========================================= */
 
 .page-section {
     display: none;
 
-    animation: fadeIn 0.35s ease;
+    animation:
+        fadeIn
+        0.35s
+        ease;
 }
 
 .page-section.active {
@@ -87,12 +115,16 @@ body {
 
     from {
         opacity: 0;
-        transform: translateY(8px);
+
+        transform:
+            translateY(8px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 
 }
@@ -109,23 +141,26 @@ body {
 
     gap: 48px;
 
-    margin-bottom: 70px;
+    margin-bottom: 72px;
 }
 
 
 .profile-photo {
     width: 175px;
+
     height: 175px;
 
     object-fit: cover;
 
-    border-radius: 6px;
-
-    background: #e9e8e4;
-
     flex-shrink: 0;
 
-    filter: grayscale(8%);
+    border-radius: 8px;
+
+    background: #E1E7E4;
+
+    filter: grayscale(10%);
+
+    border: 1px solid var(--line);
 }
 
 
@@ -134,7 +169,12 @@ body {
 ========================================= */
 
 .eyebrow {
-    margin: 0 0 14px;
+    margin:
+        0
+        0
+        14px;
+
+    color: var(--accent);
 
     font-size: 12px;
 
@@ -142,9 +182,7 @@ body {
 
     text-transform: uppercase;
 
-    letter-spacing: 2.5px;
-
-    color: var(--accent);
+    letter-spacing: 2.4px;
 }
 
 
@@ -161,9 +199,13 @@ h3 {
 
 
 h1 {
-    margin: 0 0 20px;
+    margin:
+        0
+        0
+        20px;
 
-    font-size: clamp(44px, 5vw, 62px);
+    font-size:
+        clamp(44px, 5vw, 62px);
 
     line-height: 1.05;
 
@@ -174,9 +216,13 @@ h1 {
 
 
 h2 {
-    margin: 0 0 45px;
+    margin:
+        0
+        0
+        45px;
 
-    font-size: clamp(38px, 4vw, 48px);
+    font-size:
+        clamp(38px, 4vw, 48px);
 
     line-height: 1.1;
 
@@ -187,7 +233,10 @@ h2 {
 
 
 h3 {
-    margin: 0 0 9px;
+    margin:
+        0
+        0
+        9px;
 
     font-size: 21px;
 
@@ -215,12 +264,12 @@ h3 {
 
     line-height: 1.6;
 
-    color: var(--muted);
+    color: var(--text-soft);
 }
 
 
 /* =========================================
-   BIOGRAPHY
+   BIO
 ========================================= */
 
 .bio {
@@ -230,12 +279,15 @@ h3 {
 
     line-height: 1.85;
 
-    color: #454b52;
+    color: var(--text-soft);
 }
 
 
 .bio p {
-    margin: 0 0 27px;
+    margin:
+        0
+        0
+        27px;
 }
 
 
@@ -266,9 +318,11 @@ h3 {
 
     font-size: 14px;
 
-    font-weight: 500;
+    font-weight: 600;
 
-    border-bottom: 1px solid #aeb9c4;
+    border-bottom:
+        1px solid
+        #9DB9B5;
 
     padding-bottom: 3px;
 
@@ -279,9 +333,10 @@ h3 {
 
 
 .contact a:hover {
-    color: var(--text);
+    color: var(--accent-dark);
 
-    border-color: var(--text);
+    border-color:
+        var(--accent-dark);
 }
 
 
@@ -297,11 +352,19 @@ h3 {
 .paper {
     position: relative;
 
-    padding: 0 0 36px;
+    padding:
+        0
+        0
+        36px;
 
-    margin-bottom: 38px;
+    margin:
+        0
+        0
+        40px;
 
-    border-bottom: 1px solid var(--line);
+    border-bottom:
+        1px solid
+        var(--line);
 }
 
 
@@ -311,7 +374,7 @@ h3 {
 
 
 .paper h3 {
-    max-width: 650px;
+    max-width: 680px;
 
     font-size: 22px;
 
@@ -320,22 +383,26 @@ h3 {
 
 
 .authors {
-    margin: 0 0 15px;
+    margin:
+        0
+        0
+        15px;
 
-    color: var(--light-muted);
+    color: var(--muted);
 
     font-size: 14px;
-
-    letter-spacing: 0.1px;
 }
 
 
 .paper p:not(.authors) {
     max-width: 680px;
 
-    margin: 0 0 18px;
+    margin:
+        0
+        0
+        18px;
 
-    color: #555b62;
+    color: var(--text-soft);
 
     line-height: 1.75;
 }
@@ -352,7 +419,9 @@ h3 {
 
     font-weight: 600;
 
-    border-bottom: 1px solid #aeb9c4;
+    border-bottom:
+        1px solid
+        #9DB9B5;
 
     padding-bottom: 2px;
 
@@ -363,9 +432,35 @@ h3 {
 
 
 .paper a:hover {
-    color: var(--text);
+    color: var(--accent-dark);
 
-    border-color: var(--text);
+    border-color:
+        var(--accent-dark);
+}
+
+
+/* =========================================
+   SMALL RESEARCH MARK
+========================================= */
+
+.paper::before {
+    content: "∎";
+
+    position: absolute;
+
+    left: -24px;
+
+    top: 3px;
+
+    color:
+        #AFC2BF;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 11px;
 }
 
 
@@ -378,9 +473,15 @@ h3 {
 
     margin-top: 55px;
 
-    padding-left: 25px;
+    padding:
+        3px
+        0
+        3px
+        25px;
 
-    border-left: 2px solid var(--accent-light);
+    border-left:
+        2px solid
+        var(--accent-soft);
 }
 
 
@@ -395,9 +496,12 @@ h3 {
 
 
 .teaching-item p {
-    margin: 0 0 12px;
+    margin:
+        0
+        0
+        12px;
 
-    color: #555b62;
+    color: var(--text-soft);
 
     line-height: 1.75;
 }
@@ -408,7 +512,7 @@ h3 {
 
     font-size: 14px;
 
-    font-weight: 500;
+    font-weight: 600;
 }
 
 
@@ -424,7 +528,8 @@ h3 {
 .hobby-grid {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 1px;
 
@@ -432,18 +537,31 @@ h3 {
 
     margin-top: 55px;
 
-    background: var(--line);
+    background:
+        var(--line);
 
-    border: 1px solid var(--line);
+    border:
+        1px solid
+        var(--line);
 }
 
 
 .hobby-grid div {
-    min-height: 145px;
+    min-height: 150px;
 
     padding: 28px;
 
-    background: var(--background);
+    background:
+        var(--surface);
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.hobby-grid div:hover {
+    background:
+        #FDFEFE;
 }
 
 
@@ -484,9 +602,11 @@ h3 {
     position: fixed;
 
     top: 0;
+
     right: 0;
 
     width: 220px;
+
     height: 100vh;
 
     display: flex;
@@ -495,11 +615,18 @@ h3 {
 
     justify-content: center;
 
-    border-left: 1px solid var(--line);
+    border-left:
+        1px solid
+        var(--line);
 
-    background: rgba(247, 246, 242, 0.96);
+    background:
+        rgba(243, 246, 243, 0.96);
 }
 
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
 
 .nav-inner {
     display: flex;
@@ -515,9 +642,14 @@ h3 {
 .nav-link {
     position: relative;
 
-    padding: 10px 0 10px 15px;
+    padding:
+        10px
+        0
+        10px
+        15px;
 
-    color: #969ba1;
+    color:
+        var(--light-muted);
 
     text-decoration: none;
 
@@ -551,50 +683,46 @@ h3 {
     position: absolute;
 
     left: 0;
+
     top: 50%;
 
     width: 4px;
+
     height: 24px;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
-    background: var(--accent);
+    background:
+        var(--accent);
 
     border-radius: 2px;
 }
 
 
 /* =========================================
-   SUBTLE MATHEMATICAL DETAIL
+   TEXT SELECTION
 ========================================= */
 
-.paper::before {
-    content: "∎";
+::selection {
+    background:
+        var(--accent-soft);
 
-    position: absolute;
-
-    left: -18px;
-    top: 2px;
-
-    color: #c4c9ce;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 12px;
+    color:
+        var(--text);
 }
 
 
 /* =========================================
-   SELECTION
+   LINKS / FOCUS
 ========================================= */
 
-::selection {
-    background: var(--accent-light);
+a:focus-visible {
+    outline:
+        2px solid
+        var(--accent);
 
-    color: var(--text);
+    outline-offset: 4px;
 }
 
 
@@ -619,9 +747,7 @@ h3 {
     }
 
 
-    /* -------------------------
-       PROFILE
-    ------------------------- */
+    /* PROFILE */
 
     .profile {
         flex-direction: column;
@@ -636,6 +762,7 @@ h3 {
 
     .profile-photo {
         width: 145px;
+
         height: 145px;
     }
 
@@ -666,9 +793,7 @@ h3 {
     }
 
 
-    /* -------------------------
-       CONTACT
-    ------------------------- */
+    /* CONTACT */
 
     .contact {
         flex-wrap: wrap;
@@ -679,14 +804,12 @@ h3 {
     }
 
 
-    /* -------------------------
-       PAPERS
-    ------------------------- */
+    /* PAPERS */
 
     .paper {
         padding-bottom: 30px;
 
-        margin-bottom: 30px;
+        margin-bottom: 32px;
     }
 
 
@@ -700,9 +823,7 @@ h3 {
     }
 
 
-    /* -------------------------
-       TEACHING
-    ------------------------- */
+    /* TEACHING */
 
     .teaching-item {
         padding-left: 18px;
@@ -711,9 +832,7 @@ h3 {
     }
 
 
-    /* -------------------------
-       INTERESTS
-    ------------------------- */
+    /* INTERESTS */
 
     .hobby-grid {
         grid-template-columns: 1fr;
@@ -729,12 +848,11 @@ h3 {
     }
 
 
-    /* -------------------------
-       MOBILE NAVIGATION
-    ------------------------- */
+    /* MOBILE NAVIGATION */
 
     .sidebar {
         top: auto;
+
         bottom: 0;
 
         width: 100%;
@@ -743,7 +861,9 @@ h3 {
 
         border-left: none;
 
-        border-top: 1px solid var(--line);
+        border-top:
+            1px solid
+            var(--line);
 
         z-index: 10;
     }
@@ -763,7 +883,9 @@ h3 {
 
 
     .nav-link {
-        padding: 8px 3px;
+        padding:
+            8px
+            3px;
 
         font-size: 13px;
     }
@@ -778,12 +900,15 @@ h3 {
         left: 50%;
 
         top: auto;
+
         bottom: -9px;
 
         width: 22px;
+
         height: 3px;
 
-        transform: translateX(-50%);
+        transform:
+            translateX(-50%);
     }
 
 }
@@ -805,6 +930,7 @@ h3 {
 
     .profile-photo {
         width: 125px;
+
         height: 125px;
     }
 
