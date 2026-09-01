@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Name</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="site">
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+        <!-- HOME -->
+        <section id="home" class="page-section active">
+
+            <div class="profile">
+
+                <img
+                    src="images/me.jpg"
+                    alt="Your Name"
+                    class="profile-photo"
+                >
+
+                <div>
+                    <p class="eyebrow">Welcome</p>
+
+                    <h1>Your Name</h1>
+
+                    <p class="intro">
+                        I am a researcher interested in mathematics,
+                        computer science, and interesting problems.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="bio">
+
+                <p>
+                    Hello! I am Your Name. This is my personal website,
+                    where you can find information about my research,
+                    teaching, and hobbies.
+                </p>
+
+                <p>
+                    Write a few sentences about yourself here. You can
+                    mention your university, research interests, current
+                    position, or anything else you would like visitors
+                    to know.
+                </p>
+
+            </div>
+
+            <div class="contact">
+
+                <a href="mailto:your.email@example.com">
+                    Email
+                </a>
+
+                <a href="https://github.com/" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="https://www.linkedin.com/" target="_blank">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- PAPERS -->
+        <section id="papers" class="page-section">
+
+            <p class="eyebrow">Research</p>
+
+            <h2>Papers</h2>
+
+            <div class="paper-list">
+
+                <article class="paper">
+
+                    <h3>
+                        Title of Your First Paper
+                    </h3>
+
+                    <p class="authors">
+                        Your Name, Coauthor Name · 2026
+                    </p>
+
+                    <p>
+                        A short description of the paper and its
+                        main contribution.
+                    </p>
+
+                    <a href="#">
+                        PDF →
+                    </a>
+
+                </article>
+
+
+                <article class="paper">
+
+                    <h3>
+                        Title of Your Second Paper
+                    </h3>
+
+                    <p class="authors">
+                        Your Name · 2025
+                    </p>
+
+                    <p>
+                        A short description of the paper and its
+                        main contribution.
+                    </p>
+
+                    <a href="#">
+                        PDF →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- TEACHING -->
+        <section id="teaching" class="page-section">
+
+            <p class="eyebrow">Education</p>
+
+            <h2>Teaching</h2>
+
+            <div class="teaching-item">
+
+                <h3>Course Name</h3>
+
+                <p>
+                    University Name · 2025–2026
+                </p>
+
+                <p>
+                    A short description of the course and your
+                    teaching experience.
+                </p>
+
+            </div>
+
+
+            <div class="teaching-item">
+
+                <h3>Another Course</h3>
+
+                <p>
+                    University Name · 2024–2025
+                </p>
+
+                <p>
+                    Add another teaching experience here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOBBIES -->
+        <section id="hobbies" class="page-section">
+
+            <p class="eyebrow">Outside work</p>
+
+            <h2>Hobbies</h2>
+
+            <p>
+                Here you can write about the things you enjoy
+                outside your professional life.
+            </p>
+
+            <div class="hobby-grid">
+
+                <div>
+                    <strong>Photography</strong>
+                    <span>
+                        Street and landscape photography.
+                    </span>
+                </div>
+
+                <div>
+                    <strong>Travel</strong>
+                    <span>
+                        Exploring new places and cultures.
+                    </span>
+                </div>
+
+                <div>
+                    <strong>Music</strong>
+                    <span>
+                        Your favorite music and artists.
+                    </span>
+                </div>
+
+                <div>
+                    <strong>Sports</strong>
+                    <span>
+                        Running, tennis, hiking, etc.
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RIGHT NAVIGATION -->
+    <nav class="sidebar">
+
+        <div class="nav-inner">
+
+            <a href="#home" class="nav-link active">
+                Home
+            </a>
+
+            <a href="#papers" class="nav-link">
+                Papers
+            </a>
+
+            <a href="#teaching" class="nav-link">
+                Teaching
+            </a>
+
+            <a href="#hobbies" class="nav-link">
+                Hobbies
+            </a>
+
+        </div>
+
+    </nav>
+
+</div>
+
+
+<script>
+
+    const links = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll(".page-section");
+
+    function showSection(id) {
+
+        sections.forEach(section => {
+
+            section.classList.toggle(
+                "active",
+                section.id === id
+            );
+
+        });
+
+        links.forEach(link => {
+
+            link.classList.toggle(
+                "active",
+                link.getAttribute("href") === "#" + id
+            );
+
+        });
+
+    }
+
+
+    links.forEach(link => {
+
+        link.addEventListener("click", function(event) {
+
+            event.preventDefault();
+
+            const id = this
+                .getAttribute("href")
+                .substring(1);
+
+            showSection(id);
+
+            history.replaceState(
+                null,
+                "",
+                "#" + id
+            );
+
+        });
+
+    });
+
+
+    const initial =
+        window.location.hash.substring(1);
+
+    if (
+        ["home", "papers", "teaching", "hobbies"]
+        .includes(initial)
+    ) {
+
+        showSection(initial);
+
+    }
+
+</script>
+
+</body>
+</html>
