@@ -1,5 +1,5 @@
 /* =========================================
-   CREAM + TEAL
+   WHITE + COBALT
    Vardan Tepoyan Personal Website
 ========================================= */
 
@@ -17,20 +17,23 @@ html {
 }
 
 :root {
-    --background: #F3F6F3;
-    --surface: #FAFCFA;
+    /* Main palette */
+    --background: #F7F8FA;
+    --surface: #FFFFFF;
 
-    --text: #202827;
-    --text-soft: #4F5A58;
-    --muted: #788380;
-    --light-muted: #9AA5A2;
+    --text: #171C24;
+    --text-soft: #56606D;
+    --muted: #7B8490;
+    --light-muted: #A1A8B1;
 
-    --accent: #236A68;
-    --accent-dark: #185351;
-    --accent-soft: #DCEAE7;
+    /* Cobalt */
+    --accent: #2856A3;
+    --accent-dark: #1E4380;
+    --accent-soft: #E7EDF7;
 
-    --line: #D3DEDB;
-    --line-dark: #BECBC7;
+    /* Lines */
+    --line: #DCE3F0;
+    --line-dark: #C8D2E1;
 }
 
 
@@ -156,11 +159,27 @@ body {
 
     border-radius: 8px;
 
-    background: #E1E7E4;
+    background: #E9EDF3;
 
-    filter: grayscale(10%);
+    border:
+        1px solid
+        var(--line);
 
-    border: 1px solid var(--line);
+    filter: grayscale(5%);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.profile-photo:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(23, 28, 36, 0.08);
 }
 
 
@@ -174,15 +193,16 @@ body {
         0
         14px;
 
-    color: var(--accent);
+    color:
+        var(--accent);
 
     font-size: 12px;
 
-    font-weight: 600;
+    font-weight: 700;
 
     text-transform: uppercase;
 
-    letter-spacing: 2.4px;
+    letter-spacing: 2.5px;
 }
 
 
@@ -194,7 +214,8 @@ h3 {
         "Times New Roman",
         serif;
 
-    color: var(--text);
+    color:
+        var(--text);
 }
 
 
@@ -264,12 +285,13 @@ h3 {
 
     line-height: 1.6;
 
-    color: var(--text-soft);
+    color:
+        var(--text-soft);
 }
 
 
 /* =========================================
-   BIO
+   BIOGRAPHY
 ========================================= */
 
 .bio {
@@ -279,7 +301,8 @@ h3 {
 
     line-height: 1.85;
 
-    color: var(--text-soft);
+    color:
+        var(--text-soft);
 }
 
 
@@ -312,7 +335,8 @@ h3 {
 
 
 .contact a {
-    color: var(--accent);
+    color:
+        var(--accent);
 
     text-decoration: none;
 
@@ -322,7 +346,7 @@ h3 {
 
     border-bottom:
         1px solid
-        #9DB9B5;
+        #A7B9D5;
 
     padding-bottom: 3px;
 
@@ -333,7 +357,8 @@ h3 {
 
 
 .contact a:hover {
-    color: var(--accent-dark);
+    color:
+        var(--accent-dark);
 
     border-color:
         var(--accent-dark);
@@ -378,7 +403,8 @@ h3 {
 
     font-size: 22px;
 
-    color: var(--text);
+    color:
+        var(--text);
 }
 
 
@@ -388,7 +414,8 @@ h3 {
         0
         15px;
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
     font-size: 14px;
 }
@@ -402,7 +429,8 @@ h3 {
         0
         18px;
 
-    color: var(--text-soft);
+    color:
+        var(--text-soft);
 
     line-height: 1.75;
 }
@@ -411,7 +439,8 @@ h3 {
 .paper a {
     display: inline-block;
 
-    color: var(--accent);
+    color:
+        var(--accent);
 
     text-decoration: none;
 
@@ -421,7 +450,7 @@ h3 {
 
     border-bottom:
         1px solid
-        #9DB9B5;
+        #A7B9D5;
 
     padding-bottom: 2px;
 
@@ -432,7 +461,8 @@ h3 {
 
 
 .paper a:hover {
-    color: var(--accent-dark);
+    color:
+        var(--accent-dark);
 
     border-color:
         var(--accent-dark);
@@ -440,7 +470,7 @@ h3 {
 
 
 /* =========================================
-   SMALL RESEARCH MARK
+   RESEARCH MARK
 ========================================= */
 
 .paper::before {
@@ -453,7 +483,7 @@ h3 {
     top: 3px;
 
     color:
-        #AFC2BF;
+        #B8C6DC;
 
     font-family:
         Georgia,
@@ -501,14 +531,16 @@ h3 {
         0
         12px;
 
-    color: var(--text-soft);
+    color:
+        var(--text-soft);
 
     line-height: 1.75;
 }
 
 
 .teaching-item p:first-of-type {
-    color: var(--accent);
+    color:
+        var(--accent);
 
     font-size: 14px;
 
@@ -555,13 +587,14 @@ h3 {
         var(--surface);
 
     transition:
-        background 0.2s ease;
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 
 .hobby-grid div:hover {
     background:
-        #FDFEFE;
+        #FFFFFF;
 }
 
 
@@ -579,14 +612,16 @@ h3 {
 
     font-weight: 500;
 
-    color: var(--text);
+    color:
+        var(--text);
 }
 
 
 .hobby-grid span {
     display: block;
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
     line-height: 1.65;
 
@@ -620,12 +655,12 @@ h3 {
         var(--line);
 
     background:
-        rgba(243, 246, 243, 0.96);
+        rgba(247, 248, 250, 0.97);
 }
 
 
 /* =========================================
-   NAVIGATION LINKS
+   NAVIGATION
 ========================================= */
 
 .nav-inner {
@@ -664,12 +699,14 @@ h3 {
 
 
 .nav-link:hover {
-    color: var(--text);
+    color:
+        var(--text);
 }
 
 
 .nav-link.active {
-    color: var(--accent);
+    color:
+        var(--accent);
 
     font-weight: 600;
 
@@ -701,6 +738,28 @@ h3 {
 
 
 /* =========================================
+   SUBTLE BLUE DETAILS
+========================================= */
+
+.eyebrow::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 18px;
+
+    height: 1px;
+
+    margin-right: 9px;
+
+    vertical-align: middle;
+
+    background:
+        var(--accent);
+}
+
+
+/* =========================================
    TEXT SELECTION
 ========================================= */
 
@@ -714,7 +773,7 @@ h3 {
 
 
 /* =========================================
-   LINKS / FOCUS
+   FOCUS
 ========================================= */
 
 a:focus-visible {
