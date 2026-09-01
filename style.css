@@ -1,9 +1,24 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
 * {
     box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+:root {
+    --background: #f7f6f2;
+    --surface: #ffffff;
+    --text: #20242a;
+    --muted: #68707a;
+    --light-muted: #969ca3;
+    --line: #deded9;
+    --accent: #263f5b;
+    --accent-light: #e8edf2;
 }
 
 body {
@@ -16,41 +31,51 @@ body {
         Arial,
         sans-serif;
 
-    background: #fafafa;
-    color: #222;
+    background: var(--background);
+    color: var(--text);
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    -webkit-font-smoothing: antialiased;
 }
 
+
+/* =========================================
+   SITE LAYOUT
+========================================= */
 
 .site {
     min-height: 100vh;
 
     display: grid;
 
-    grid-template-columns: 1fr 220px;
+    grid-template-columns: minmax(0, 1fr) 220px;
 }
 
 
-/* --------------------
+/* =========================================
    MAIN CONTENT
--------------------- */
+========================================= */
 
 .content {
-    max-width: 900px;
-
     width: 100%;
+    max-width: 920px;
 
-    padding:
-        100px
-        80px;
+    padding: 100px 80px 120px;
 
     justify-self: center;
 }
 
 
+/* =========================================
+   SECTIONS
+========================================= */
+
 .page-section {
     display: none;
 
-    animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.35s ease;
 }
 
 .page-section.active {
@@ -62,7 +87,7 @@ body {
 
     from {
         opacity: 0;
-        transform: translateY(5px);
+        transform: translateY(8px);
     }
 
     to {
@@ -73,248 +98,387 @@ body {
 }
 
 
-/* --------------------
+/* =========================================
    PROFILE
--------------------- */
+========================================= */
 
 .profile {
     display: flex;
 
     align-items: center;
 
-    gap: 45px;
+    gap: 48px;
 
-    margin-bottom: 55px;
+    margin-bottom: 70px;
 }
 
 
 .profile-photo {
-    width: 180px;
-    height: 180px;
+    width: 175px;
+    height: 175px;
 
     object-fit: cover;
 
-    border-radius: 50%;
+    border-radius: 6px;
 
-    background: #e8e8e8;
+    background: #e9e8e4;
+
+    flex-shrink: 0;
+
+    filter: grayscale(8%);
 }
 
 
-.eyebrow {
-    margin-bottom: 12px;
+/* =========================================
+   TYPOGRAPHY
+========================================= */
 
-    font-size: 13px;
+.eyebrow {
+    margin: 0 0 14px;
+
+    font-size: 12px;
 
     font-weight: 600;
 
     text-transform: uppercase;
 
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
 
-    color: #777;
+    color: var(--accent);
+}
+
+
+h1,
+h2,
+h3 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: var(--text);
 }
 
 
 h1 {
     margin: 0 0 20px;
 
-    font-size: 52px;
+    font-size: clamp(44px, 5vw, 62px);
 
     line-height: 1.05;
 
-    font-weight: 600;
+    font-weight: 400;
 
-    letter-spacing: -1.5px;
+    letter-spacing: -2px;
 }
 
 
 h2 {
-    margin-top: 0;
+    margin: 0 0 45px;
 
-    margin-bottom: 40px;
+    font-size: clamp(38px, 4vw, 48px);
 
-    font-size: 42px;
+    line-height: 1.1;
 
-    font-weight: 600;
+    font-weight: 400;
+
+    letter-spacing: -1px;
 }
 
 
 h3 {
-    margin-bottom: 8px;
+    margin: 0 0 9px;
 
-    font-size: 20px;
+    font-size: 21px;
 
-    font-weight: 600;
+    line-height: 1.35;
+
+    font-weight: 500;
 }
 
 
+/* =========================================
+   INTRO
+========================================= */
+
 .intro {
-    max-width: 500px;
+    max-width: 560px;
 
     margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size: 20px;
 
     line-height: 1.6;
 
-    color: #555;
+    color: var(--muted);
 }
 
 
+/* =========================================
+   BIOGRAPHY
+========================================= */
+
 .bio {
-    max-width: 700px;
+    max-width: 730px;
 
-    font-size: 17px;
+    font-size: 16.5px;
 
-    line-height: 1.8;
+    line-height: 1.85;
 
-    color: #444;
+    color: #454b52;
 }
 
 
 .bio p {
-    margin-bottom: 25px;
+    margin: 0 0 27px;
 }
 
 
-/* --------------------
+.bio p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
    CONTACT
--------------------- */
+========================================= */
 
 .contact {
     display: flex;
 
-    gap: 25px;
+    align-items: center;
 
-    margin-top: 40px;
+    gap: 28px;
+
+    margin-top: 48px;
 }
 
 
-.contact a,
-.paper a {
-    color: #222;
+.contact a {
+    color: var(--accent);
 
     text-decoration: none;
 
-    border-bottom: 1px solid #aaa;
+    font-size: 14px;
 
-    padding-bottom: 2px;
+    font-weight: 500;
+
+    border-bottom: 1px solid #aeb9c4;
+
+    padding-bottom: 3px;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 
-.contact a:hover,
-.paper a:hover {
-    color: #777;
+.contact a:hover {
+    color: var(--text);
 
-    border-color: #777;
+    border-color: var(--text);
 }
 
 
-/* --------------------
-   PAPERS
--------------------- */
+/* =========================================
+   RESEARCH / PAPERS
+========================================= */
 
 .paper-list {
-    max-width: 750px;
+    max-width: 760px;
 }
 
 
 .paper {
-    padding: 0 0 30px;
+    position: relative;
 
-    margin-bottom: 30px;
+    padding: 0 0 36px;
 
-    border-bottom: 1px solid #ddd;
+    margin-bottom: 38px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+
+.paper:last-child {
+    margin-bottom: 0;
 }
 
 
 .paper h3 {
-    margin-top: 0;
+    max-width: 650px;
+
+    font-size: 22px;
+
+    color: var(--text);
 }
 
 
 .authors {
-    color: #777;
+    margin: 0 0 15px;
+
+    color: var(--light-muted);
 
     font-size: 14px;
+
+    letter-spacing: 0.1px;
 }
 
 
-.paper p {
-    line-height: 1.7;
+.paper p:not(.authors) {
+    max-width: 680px;
 
-    color: #555;
+    margin: 0 0 18px;
+
+    color: #555b62;
+
+    line-height: 1.75;
 }
 
 
-/* --------------------
+.paper a {
+    display: inline-block;
+
+    color: var(--accent);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    border-bottom: 1px solid #aeb9c4;
+
+    padding-bottom: 2px;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.paper a:hover {
+    color: var(--text);
+
+    border-color: var(--text);
+}
+
+
+/* =========================================
    TEACHING
--------------------- */
+========================================= */
 
 .teaching-item {
-    max-width: 700px;
+    max-width: 730px;
 
-    margin-bottom: 45px;
+    margin-top: 55px;
+
+    padding-left: 25px;
+
+    border-left: 2px solid var(--accent-light);
+}
+
+
+.teaching-item:first-of-type {
+    margin-top: 48px;
+}
+
+
+.teaching-item h3 {
+    margin-bottom: 7px;
 }
 
 
 .teaching-item p {
-    line-height: 1.7;
+    margin: 0 0 12px;
 
-    color: #555;
+    color: #555b62;
+
+    line-height: 1.75;
 }
 
 
-/* --------------------
-   HOBBIES
--------------------- */
+.teaching-item p:first-of-type {
+    color: var(--accent);
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+
+.teaching-item p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   INTERESTS
+========================================= */
 
 .hobby-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 20px;
+    gap: 1px;
 
-    max-width: 700px;
+    max-width: 730px;
 
-    margin-top: 35px;
+    margin-top: 55px;
+
+    background: var(--line);
+
+    border: 1px solid var(--line);
 }
 
 
 .hobby-grid div {
-    padding: 25px;
+    min-height: 145px;
 
-    background: white;
+    padding: 28px;
 
-    border: 1px solid #e5e5e5;
-
-    border-radius: 8px;
+    background: var(--background);
 }
 
 
 .hobby-grid strong {
     display: block;
 
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 
-    font-size: 17px;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    color: var(--text);
 }
 
 
 .hobby-grid span {
-    color: #777;
+    display: block;
 
-    line-height: 1.5;
+    color: var(--muted);
+
+    line-height: 1.65;
 
     font-size: 14px;
 }
 
 
-/* --------------------
+/* =========================================
    RIGHT NAVIGATION
--------------------- */
+========================================= */
 
 .sidebar {
     position: fixed;
@@ -323,7 +487,6 @@ h3 {
     right: 0;
 
     width: 220px;
-
     height: 100vh;
 
     display: flex;
@@ -332,9 +495,9 @@ h3 {
 
     justify-content: center;
 
-    border-left: 1px solid #e5e5e5;
+    border-left: 1px solid var(--line);
 
-    background: #fafafa;
+    background: rgba(247, 246, 242, 0.96);
 }
 
 
@@ -343,7 +506,7 @@ h3 {
 
     flex-direction: column;
 
-    gap: 25px;
+    gap: 8px;
 
     width: 150px;
 }
@@ -352,13 +515,15 @@ h3 {
 .nav-link {
     position: relative;
 
-    padding: 8px 0;
+    padding: 10px 0 10px 15px;
 
-    color: #999;
+    color: #969ba1;
 
     text-decoration: none;
 
-    font-size: 16px;
+    font-size: 14px;
+
+    letter-spacing: 0.2px;
 
     transition:
         color 0.2s ease,
@@ -367,16 +532,16 @@ h3 {
 
 
 .nav-link:hover {
-    color: #222;
+    color: var(--text);
 }
 
 
 .nav-link.active {
-    color: #222;
+    color: var(--accent);
 
     font-weight: 600;
 
-    padding-left: 15px;
+    padding-left: 22px;
 }
 
 
@@ -389,19 +554,53 @@ h3 {
     top: 50%;
 
     width: 4px;
-    height: 20px;
+    height: 24px;
 
     transform: translateY(-50%);
 
-    background: #222;
+    background: var(--accent);
 
     border-radius: 2px;
 }
 
 
-/* --------------------
+/* =========================================
+   SUBTLE MATHEMATICAL DETAIL
+========================================= */
+
+.paper::before {
+    content: "∎";
+
+    position: absolute;
+
+    left: -18px;
+    top: 2px;
+
+    color: #c4c9ce;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection {
+    background: var(--accent-light);
+
+    color: var(--text);
+}
+
+
+/* =========================================
    MOBILE
--------------------- */
+========================================= */
 
 @media (max-width: 800px) {
 
@@ -411,12 +610,128 @@ h3 {
 
 
     .content {
+        max-width: 100%;
+
         padding:
-            50px
+            55px
             25px
-            120px;
+            115px;
     }
 
+
+    /* -------------------------
+       PROFILE
+    ------------------------- */
+
+    .profile {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 30px;
+
+        margin-bottom: 55px;
+    }
+
+
+    .profile-photo {
+        width: 145px;
+        height: 145px;
+    }
+
+
+    h1 {
+        font-size: 44px;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    h2 {
+        font-size: 38px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .intro {
+        font-size: 18px;
+    }
+
+
+    .bio {
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+
+    /* -------------------------
+       CONTACT
+    ------------------------- */
+
+    .contact {
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+        margin-top: 40px;
+    }
+
+
+    /* -------------------------
+       PAPERS
+    ------------------------- */
+
+    .paper {
+        padding-bottom: 30px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .paper::before {
+        display: none;
+    }
+
+
+    .paper h3 {
+        font-size: 20px;
+    }
+
+
+    /* -------------------------
+       TEACHING
+    ------------------------- */
+
+    .teaching-item {
+        padding-left: 18px;
+
+        margin-top: 42px;
+    }
+
+
+    /* -------------------------
+       INTERESTS
+    ------------------------- */
+
+    .hobby-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 40px;
+    }
+
+
+    .hobby-grid div {
+        min-height: auto;
+
+        padding: 24px;
+    }
+
+
+    /* -------------------------
+       MOBILE NAVIGATION
+    ------------------------- */
 
     .sidebar {
         top: auto;
@@ -424,11 +739,11 @@ h3 {
 
         width: 100%;
 
-        height: 75px;
+        height: 72px;
 
         border-left: none;
 
-        border-top: 1px solid #e5e5e5;
+        border-top: 1px solid var(--line);
 
         z-index: 10;
     }
@@ -439,14 +754,23 @@ h3 {
 
         flex-direction: row;
 
+        align-items: center;
+
         justify-content: center;
 
-        gap: 25px;
+        gap: 18px;
+    }
+
+
+    .nav-link {
+        padding: 8px 3px;
+
+        font-size: 13px;
     }
 
 
     .nav-link.active {
-        padding-left: 0;
+        padding-left: 3px;
     }
 
 
@@ -454,33 +778,39 @@ h3 {
         left: 50%;
 
         top: auto;
-        bottom: -10px;
+        bottom: -9px;
 
-        width: 20px;
+        width: 22px;
         height: 3px;
 
-        transform:
-            translateX(-50%);
+        transform: translateX(-50%);
     }
 
+}
 
-    .profile {
-        flex-direction: column;
 
-        align-items: flex-start;
+/* =========================================
+   SMALL PHONES
+========================================= */
 
-        gap: 30px;
+@media (max-width: 420px) {
+
+    .content {
+        padding:
+            45px
+            20px
+            110px;
     }
 
 
     .profile-photo {
-        width: 140px;
-        height: 140px;
+        width: 125px;
+        height: 125px;
     }
 
 
     h1 {
-        font-size: 42px;
+        font-size: 38px;
     }
 
 
@@ -489,13 +819,25 @@ h3 {
     }
 
 
-    .intro {
-        font-size: 18px;
+    .eyebrow {
+        font-size: 11px;
+
+        letter-spacing: 2px;
     }
 
 
-    .hobby-grid {
-        grid-template-columns: 1fr;
+    .intro {
+        font-size: 17px;
+    }
+
+
+    .nav-inner {
+        gap: 13px;
+    }
+
+
+    .nav-link {
+        font-size: 12px;
     }
 
 }
