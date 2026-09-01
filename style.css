@@ -18,7 +18,7 @@ html {
 
 :root {
     /* Main palette */
-    --background: #F7F8FA;
+    --background: white;
     --surface: #FFFFFF;
 
     --text: #171C24;
